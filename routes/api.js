@@ -53,7 +53,7 @@ router.post('/new', function( req, res, next){
     res.json(_newCursos);
 }); //post /new
 
-router.put('/atendee/:id', function( req, res, next){
+router.put('/atendee/:curso', function( req, res, next){
     var curso = req.params.curso;
     var modifiedCursos = null;
 
@@ -71,7 +71,7 @@ router.put('/atendee/:id', function( req, res, next){
     res.json(modifiedCursos);
 }); //put /atendee
 
-router.delete('/atendee/:id', function( req, res, next){
+router.delete('/atendee/:curso', function( req, res, next){
     var curso = req.params.curso;
 
     Cursos = Cursos.filter(
@@ -84,7 +84,7 @@ router.delete('/atendee/:id', function( req, res, next){
     res.json({deleted:true});
 }); //delete /atendee
 
-router.get('/atendee/:id', function( req, res, next){
+router.get('/atendee/:curso', function( req, res, next){
     var curso = req.params.curso;
 
     var filter = Cursos.filter(
