@@ -21,6 +21,12 @@ app.use(cookieParser());
 app.use(lessMiddleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+var apiRoutes = require("./routes/api.js"); //
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/api', apiRoutes);  //
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
